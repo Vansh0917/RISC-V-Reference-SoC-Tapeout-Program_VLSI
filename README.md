@@ -27,7 +27,8 @@ The design methodology follows a structured approach with four main stages, each
 
 ### Design Flow Architecture
 
-![Chip Modeling Stages](images/chip_modeling.png)
+<img width="1919" height="1034" alt="Screenshot 2025-09-20 121911" src="https://github.com/user-attachments/assets/6323cee6-6d04-4fa5-84de-5b8bc081e207" />
+
 
 The complete flow consists of four stages operating at **100MHz to 130MHz** frequency range:
 
