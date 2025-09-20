@@ -262,49 +262,28 @@ The RISC-V Reference SoC demonstrates versatility across multiple application do
 
 # Troubleshooting Notes
 
-Common Issues Encountered and Solutions
-Docker Version Check Failing
-Issue: docker --version returns container errors
-Cause: docker is aliased to OpenLane container launcher
-Solution: Use command docker --version to bypass alias
-Python3-pip Not Found
-Issue: python3 -m pip --version fails
-Cause: pip not installed by default with Python3
-Solution: sudo apt-get install python3-pip
-OpenLane Directory Navigation
-Issue: cd openlane fails
-Cause: Relative path depends on current directory
-Solution: Use full path cd ~/Desktop/work/tools/openlane_working_dir/openlane jus give me md code for this part
+## Common Issues Encountered and Solutions
 
-```markdown
-### Troubleshooting Notes
+### 1. Docker Version Check Failing
+- **Issue**: `docker --version` returns container errors
+- **Cause**: `docker` is aliased to OpenLane container launcher
+- **Solution**: Use `command docker --version` to bypass alias
 
-#### Docker Version Check Failing
-- Issue: `docker --version` returns container errors
-- Cause: `docker` is aliased to the OpenLane container launcher
-- Solution: Use `command docker --version` to bypass the alias
+### 2. Python3-pip Not Found
+- **Issue**: `python3 -m pip --version` fails
+- **Cause**: pip not installed by default with Python3
+- **Solution**: 
+  ```bash
+  sudo apt-get install python3-pip
+  ```
 
-#### Python3-pip Not Found
-- Issue: `python3 -m pip --version` fails
-- Cause: `pip` is not installed by default with Python3
-- Solution:
-```
-
-sudo apt-get update
-sudo apt-get install python3-pip
-
-```
-
-#### OpenLane Directory Navigation
-- Issue: `cd openlane` fails
-- Cause: Relative path depends on current directory
-- Solution:
-```
-
-cd ~/Desktop/work/tools/openlane_working_dir/openlane
-
-```
-```
+### 3. OpenLane Directory Navigation
+- **Issue**: `cd openlane` fails
+- **Cause**: Relative path depends on current directory
+- **Solution**: Use full path
+  ```bash
+  cd ~/Desktop/work/tools/openlane_working_dir/openlane
+  ```
 
 ## Conclusion
 
