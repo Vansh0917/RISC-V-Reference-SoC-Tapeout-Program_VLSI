@@ -260,6 +260,52 @@ The RISC-V Reference SoC demonstrates versatility across multiple application do
 | OpenLane | Pre-installed | Latest | VDI included | Flow operational |
 | Docker | Pre-installed | Latest | VDI included | Container ready |
 
+# Troubleshooting Notes
+
+Common Issues Encountered and Solutions
+Docker Version Check Failing
+Issue: docker --version returns container errors
+Cause: docker is aliased to OpenLane container launcher
+Solution: Use command docker --version to bypass alias
+Python3-pip Not Found
+Issue: python3 -m pip --version fails
+Cause: pip not installed by default with Python3
+Solution: sudo apt-get install python3-pip
+OpenLane Directory Navigation
+Issue: cd openlane fails
+Cause: Relative path depends on current directory
+Solution: Use full path cd ~/Desktop/work/tools/openlane_working_dir/openlane jus give me md code for this part
+
+```markdown
+### Troubleshooting Notes
+
+#### Docker Version Check Failing
+- Issue: `docker --version` returns container errors
+- Cause: `docker` is aliased to the OpenLane container launcher
+- Solution: Use `command docker --version` to bypass the alias
+
+#### Python3-pip Not Found
+- Issue: `python3 -m pip --version` fails
+- Cause: `pip` is not installed by default with Python3
+- Solution:
+```
+
+sudo apt-get update
+sudo apt-get install python3-pip
+
+```
+
+#### OpenLane Directory Navigation
+- Issue: `cd openlane` fails
+- Cause: Relative path depends on current directory
+- Solution:
+```
+
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+
+```
+```
+
 ## Conclusion
 
 Week 0 has been successfully completed with all essential EDA tools installed and verified in the OpenLane VDI environment. The comprehensive tool ecosystem including Yosys, Icarus Verilog, GTKWave, Magic, and the complete OpenLane flow provides a robust foundation for the 20-week RISC-V Reference SoC Tapeout Program.
