@@ -190,11 +190,13 @@ magic -T sky130A
 ```
 
 #### OpenLane Flow
-```bash
-cd $HOME/OpenLane
-make --version
-docker --version
-python3 --version
+```sh
+cd Desktop/work/tools/openlane_working_dir/openlane
+cd Desktop/
+cd work/
+cd tools/
+cd openlane_working_dir/
+cd openlane/
 ```
 
 #### ngspice Circuit Simulator
