@@ -27,8 +27,7 @@ The design methodology follows a structured approach with four main stages, each
 
 ### Design Flow Architecture
 
-<img width="1919" height="1034" alt="Screenshot 2025-09-20 121911" src="https://github.com/user-attachments/assets/6323cee6-6d04-4fa5-84de-5b8bc081e207" />
-
+<img width="1919" height="1079" alt="Screenshot 2025-09-20 122053" src="https://github.com/user-attachments/assets/0f510601-94b3-4720-9fe6-8cbed9aed676" />
 
 The complete flow consists of four stages operating at **100MHz to 130MHz** frequency range:
 
@@ -53,7 +52,8 @@ The complete flow consists of four stages operating at **100MHz to 130MHz** freq
 
 ### RTL to Silicon Implementation
 
-![RTL to GDSII Flow](images/rtl_to_gdsii.png)
+![RTL to GDSII Flow](<img width="1919" height="1034" alt="Screenshot 2025-09-20 121911" src="https://github.com/user-attachments/assets/8f6dc560-d8de-4d57-a900-baabf1ae5c71" />
+) 
 
 The complete RTL2GDS flow encompasses front-end design, physical design, back-end verification, and tapeout processes.
 
