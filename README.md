@@ -52,8 +52,7 @@ The complete flow consists of four stages operating at **100MHz to 130MHz** freq
 
 ### RTL to Silicon Implementation
 
-![RTL to GDSII Flow](<img width="1919" height="1034" alt="Screenshot 2025-09-20 121911" src="https://github.com/user-attachments/assets/8f6dc560-d8de-4d57-a900-baabf1ae5c71" />
-) 
+<img width="1919" height="1034" alt="Screenshot 2025-09-20 121911" src="https://github.com/user-attachments/assets/6a22521c-4897-4899-9931-505477e48d15" />
 
 The complete RTL2GDS flow encompasses front-end design, physical design, back-end verification, and tapeout processes.
 
@@ -96,7 +95,7 @@ magic -T sky130A
 
 ### 1. Yosys - RTL Synthesis Tool
 
-![Yosys Installation Process](screenshots/yosys_build.jpg)
+<img width="1277" height="851" alt="Screenshot 2025-09-20 135240" src="https://github.com/user-attachments/assets/9a519861-361d-4d1c-bbeb-e78b2a05f20a" />
 
 **Installation Process Completed:**
 The screenshot shows the successful compilation of Yosys from source code with the following key stages:
@@ -111,7 +110,7 @@ The screenshot shows the successful compilation of Yosys from source code with t
 
 **Build Status**: Successfully reaching 64% completion with all compilation processes proceeding without errors.
 
-![Yosys Installation Completion](screenshots/yosys_install.jpg)
+<img width="1281" height="847" alt="Screenshot 2025-09-20 141459" src="https://github.com/user-attachments/assets/c0e623ef-f8b0-437e-9731-dac1cdba2f31" />
 
 **Final Installation Steps:**
 The completion screenshot shows:
@@ -128,7 +127,7 @@ yosys --version
 
 ### 2. Icarus Verilog - Verilog Simulator
 
-![Icarus Verilog Installation](screenshots/iverilog_install.jpg)
+<img width="1277" height="857" alt="Screenshot 2025-09-20 141620" src="https://github.com/user-attachments/assets/ecdbdc13-8f64-44ba-8ab9-3afbc431867d" />
 
 **Installation Process:**
 The screenshot demonstrates the installation of Icarus Verilog using Ubuntu package manager:
@@ -151,7 +150,7 @@ iverilog -V
 
 ### 3. GTKWave - Waveform Viewer
 
-![GTKWave Installation and Launch](screenshots/gtkwave_launch.jpg)
+<img width="1313" height="868" alt="Screenshot 2025-09-20 141726" src="https://github.com/user-attachments/assets/8f6b32bb-225c-4432-b45b-1b295e0e5b82" />
 
 **Installation and Verification:**
 The screenshot shows successful GTKWave installation and launch:
@@ -211,8 +210,6 @@ make --version
 ```
 
 ## Application Domains
-
-![Application Examples](images/applications.png)
 
 The RISC-V Reference SoC demonstrates versatility across multiple application domains with the same core architecture (O1=O2=O3=O4):
 
