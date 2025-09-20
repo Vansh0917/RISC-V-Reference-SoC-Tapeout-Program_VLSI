@@ -181,7 +181,7 @@ gtkwave &
 
 ### 4. Additional Tools (Pre-installed in VDI)
 
-Since you're using the OpenLane VDI, the following tools are already installed and configured:
+Since I'm using the OpenLane VDI, the following tools are already installed and configured:
 
 #### Magic VLSI Layout Tool
 ```bash
