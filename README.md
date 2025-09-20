@@ -1,14 +1,15 @@
+# RISC-V Reference SoC Tapeout Program
 
-# RISC-V Reference SoC Tapeout Program - Week 0: 
-Getting Started with Digital VLSI SoC Design and Planning
+## Week 0: Getting Started with Digital VLSI SoC Design and Planning
+
+*Date: September 20, 2025*
 
 ## Table of Contents
 1. [Program Overview](#program-overview)
 2. [SoC Design Flow](#soc-design-flow)
-3. [OpenLane VDI Environment Setup](#openlane-vdi-environment-setup)
-4. [Tool Installation & Verification](#tool-installation--verification)
-5. [Application Domains](#application-domains)
-6. [Week 0 Accomplishments](#week-0-accomplishments)
+3. [Tool Installation & Verification](#tool-installation--verification)
+4. [Application Domains](#application-domains)
+5. [Week 0 Accomplishments](#week-0-accomplishments)
 
 ## Program Overview
 
@@ -55,29 +56,46 @@ The complete flow consists of four stages operating at **100MHz to 130MHz** freq
 
 The complete RTL2GDS flow encompasses front-end design, physical design, back-end verification, and tapeout processes.
 
-## OpenLane VDI Environment Setup
-
-### System Configuration
-- **VDI Environment**: Pre-configured OpenLane Virtual Disk Image
-- **Host System**: Oracle VirtualBox on Windows/Linux
-- **Guest OS**: Ubuntu 20.04 LTS
-- **User**: vsduser@vsdsquadron
-- **All EDA Tools**: Pre-installed and configured
-
-### Environment Advantages
-Since you're using the pre-installed OpenLane VDI from previous VSD course enrollment:
-- ✅ All tools are pre-compiled and configured
-- ✅ No dependency conflicts or version mismatches  
-- ✅ Optimized environment for VLSI design flow
-- ✅ Ready-to-use PDK libraries and design kits
-
 ## Tool Installation & Verification
 
 This section documents the successful installation and verification of essential EDA tools in the OpenLane VDI environment.
 
+### Tool Usage Commands
+
+#### Basic Tool Verification
+```bash
+# Tool version checks
+yosys --version
+iverilog -V  
+gtkwave --version
+magic --version
+ngspice --version
+
+# System information
+uname -a
+lsb_release -a
+```
+
+#### Daily Development Commands
+```bash
+# Basic Verilog simulation flow
+iverilog -o design design.v testbench.v
+./design
+gtkwave waveform.vcd
+
+# Yosys synthesis check
+yosys -p "read_verilog design.v; synth; show"
+
+# OpenLane flow
+cd $HOME/OpenLane && make mount
+
+# Magic VLSI layout
+magic -T sky130A
+```
+
 ### 1. Yosys - RTL Synthesis Tool
 
-![Yosys Installation Process](Screenshot-2025-09-20-140921.jpg)
+![Yosys Installation Process](screenshots/yosys_build.jpg)
 
 **Installation Process Completed:**
 The screenshot shows the successful compilation of Yosys from source code with the following key stages:
@@ -92,7 +110,7 @@ The screenshot shows the successful compilation of Yosys from source code with t
 
 **Build Status**: Successfully reaching 64% completion with all compilation processes proceeding without errors.
 
-![Yosys Installation Completion](Screenshot-2025-09-20-141426.jpg)
+![Yosys Installation Completion](screenshots/yosys_install.jpg)
 
 **Final Installation Steps:**
 The completion screenshot shows:
@@ -105,12 +123,11 @@ The completion screenshot shows:
 **Verification Commands:**
 ```bash
 yosys --version
-# Expected: Yosys version information and successful tool launch
 ```
 
 ### 2. Icarus Verilog - Verilog Simulator
 
-![Icarus Verilog Installation](Screenshot-2025-09-20-141620.jpg)
+![Icarus Verilog Installation](screenshots/iverilog_install.jpg)
 
 **Installation Process:**
 The screenshot demonstrates the installation of Icarus Verilog using Ubuntu package manager:
@@ -129,12 +146,11 @@ sudo apt-get install iverilog
 **Verification Result:**
 ```bash
 iverilog -V
-# Shows successful installation and version information
 ```
 
 ### 3. GTKWave - Waveform Viewer
 
-![GTKWave Installation and Launch](Screenshot-2025-09-20-141726.jpg)
+![GTKWave Installation and Launch](screenshots/gtkwave_launch.jpg)
 
 **Installation and Verification:**
 The screenshot shows successful GTKWave installation and launch:
@@ -160,7 +176,7 @@ sudo apt-get install gtkwave
 **Usage Verification:**
 ```bash
 gtkwave --version
-gtkwave &  # Launch GUI application
+gtkwave &
 ```
 
 ### 4. Additional Tools (Pre-installed in VDI)
@@ -170,7 +186,7 @@ Since you're using the OpenLane VDI, the following tools are already installed a
 #### Magic VLSI Layout Tool
 ```bash
 magic --version
-magic -T sky130A  # Launch with Sky130 technology
+magic -T sky130A
 ```
 
 #### OpenLane Flow
@@ -213,27 +229,21 @@ The RISC-V Reference SoC demonstrates versatility across multiple application do
 
 ## Week 0 Accomplishments
 
-### ✅ Environment Setup Completed
-- **OpenLane VDI**: Successfully imported and running in Oracle VirtualBox
-- **Ubuntu 20.04**: Desktop environment fully operational
-- **User Account**: vsduser@vsdsquadron configured and accessible
-- **Network**: Internet connectivity verified for package installations
+### Tool Installation Verified
+- **Yosys**: Successfully compiled from source and installed
+- **Icarus Verilog**: Installed via apt package manager
+- **GTKWave**: Installed and GUI verified working
+- **Magic**: Pre-installed in VDI environment  
+- **OpenLane**: Complete flow ready and operational
+- **Docker**: Container support configured
 
-### ✅ Tool Installation Verified
-- **Yosys**: ✅ Successfully compiled from source and installed
-- **Icarus Verilog**: ✅ Installed via apt package manager
-- **GTKWave**: ✅ Installed and GUI verified working
-- **Magic**: ✅ Pre-installed in VDI environment  
-- **OpenLane**: ✅ Complete flow ready and operational
-- **Docker**: ✅ Container support configured
-
-### ✅ Knowledge Acquisition
+### Knowledge Acquisition
 - **SoC Design Flow**: Complete understanding of O1→O2→O3→O4 stages
 - **RTL to GDSII**: Physical design flow comprehension
 - **Tool Ecosystem**: EDA tool interoperability and usage
 - **Application Domains**: Real-world SoC deployment scenarios
 
-### ✅ Technical Skills Developed
+### Technical Skills Developed
 - **Linux Command Line**: Package installation and system management
 - **Tool Compilation**: Building EDA tools from source code
 - **Version Control**: Git repository management
@@ -243,78 +253,12 @@ The RISC-V Reference SoC demonstrates versatility across multiple application do
 
 | Tool | Status | Version | Installation Method | Verification |
 |------|--------|---------|-------------------|--------------|
-| Yosys | ✅ Installed | Latest | Source compilation | `yosys --version` |
-| Icarus Verilog | ✅ Installed | 10.1-0.1build1 | apt package | `iverilog -V` |
-| GTKWave | ✅ Installed | Latest | apt package | GUI launch verified |
-| Magic | ✅ Pre-installed | Latest | VDI included | Ready to use |
-| OpenLane | ✅ Pre-installed | Latest | VDI included | Flow operational |
-| Docker | ✅ Pre-installed | Latest | VDI included | Container ready |
-
-## Repository Structure
-
-```
-RISC-V-Reference-SoC-Tapeout-Program_Week-0/
-├── README.md                    # This documentation
-├── images/                      # Design flow diagrams
-│   ├── chip_modeling.png        # O1=O2=O3=O4 flow diagram
-│   ├── rtl_to_gdsii.png        # Complete RTL2GDS process
-│   └── applications.png         # Application domain examples
-├── screenshots/                 # Tool installation screenshots  
-│   ├── yosys_build.jpg         # Yosys compilation process
-│   ├── yosys_install.jpg       # Yosys installation completion
-│   ├── iverilog_install.jpg    # Icarus Verilog installation
-│   └── gtkwave_launch.jpg      # GTKWave GUI verification
-├── docs/                        # Additional documentation
-├── scripts/                     # Tool verification scripts
-└── logs/                        # Installation and build logs
-```
-
-## Quick Reference Commands
-
-### Daily Tool Usage
-```bash
-# Tool version checks
-yosys --version
-iverilog -V  
-gtkwave --version
-
-# Basic Verilog simulation flow
-iverilog -o design design.v testbench.v
-./design
-gtkwave waveform.vcd
-
-# Yosys synthesis check
-yosys -p "read_verilog design.v; synth; show"
-
-# OpenLane flow
-cd $HOME/OpenLane && make mount
-```
-
-### Environment Management
-```bash
-# VDI system info
-uname -a
-lsb_release -a
-
-# Resource usage
-free -h
-df -h
-htop
-```
-
-## Next Steps - Week 1 Preparation
-
-### Immediate Actions
-1. **Explore OpenLane Flow**: Run sample designs through complete RTL2GDS
-2. **Verilog Practice**: Create simple RTL designs and testbenches
-3. **Tool Familiarization**: Practice with Yosys synthesis and GTKWave analysis
-4. **Repository Setup**: Organize project structure for upcoming weeks
-
-### Learning Objectives for Week 1
-1. **RTL Design**: Implement RISC-V processor components
-2. **Verification**: Develop comprehensive testbenches
-3. **Synthesis**: Use Yosys for RTL synthesis and optimization
-4. **Analysis**: Waveform debugging with GTKWave
+| Yosys | Installed | Latest | Source compilation | `yosys --version` |
+| Icarus Verilog | Installed | 10.1-0.1build1 | apt package | `iverilog -V` |
+| GTKWave | Installed | Latest | apt package | GUI launch verified |
+| Magic | Pre-installed | Latest | VDI included | Ready to use |
+| OpenLane | Pre-installed | Latest | VDI included | Flow operational |
+| Docker | Pre-installed | Latest | VDI included | Container ready |
 
 ## Conclusion
 
@@ -326,7 +270,7 @@ The demonstrated installation process showcases:
 - **Ready for Development**: Environment prepared for complex RTL design
 - **Real Tapeout Capability**: Complete flow from RTL to GDSII available
 
-**🎯 Week 0 Status: COMPLETE** - Ready to proceed to Week 1 RTL Architecture Design
+**Week 0 Status: COMPLETE** - Ready to proceed to Week 1 RTL Architecture Design
 
 ---
 
