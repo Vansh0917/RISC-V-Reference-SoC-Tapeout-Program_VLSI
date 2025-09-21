@@ -1,4 +1,5 @@
-# RISC-V Reference SoC Tapeout Program ## Week 0: Getting Started with Digital VLSI SoC Design and Planning
+# RISC-V Reference SoC Tapeout Program 
+## Week 0: Getting Started with Digital VLSI SoC Design and Planning
 
 *Date: September 20, 2025*
 
