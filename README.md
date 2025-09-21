@@ -96,8 +96,6 @@ cd openlane_working_dir/
 cd openlane/
 ```
 
-# Magic VLSI layout
-magic -T sky130A
 
 
 ### 1. Yosys - RTL Synthesis Tool
