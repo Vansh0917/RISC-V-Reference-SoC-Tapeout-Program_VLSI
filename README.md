@@ -87,7 +87,14 @@ gtkwave waveform.vcd
 yosys -p "read_verilog design.v; synth; show"
 
 # OpenLane flow
-cd $HOME/OpenLane && make mount
+```sh
+cd Desktop/work/tools/openlane_working_dir/openlane
+cd Desktop/
+cd work/
+cd tools/
+cd openlane_working_dir/
+cd openlane/
+```
 
 # Magic VLSI layout
 magic -T sky130A
